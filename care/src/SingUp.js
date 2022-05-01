@@ -7,9 +7,12 @@ import {
 } from 'react-router-dom'
 export default class SingUp extends Component {
   render() {
+    const style = {
+      padding: "0 30px"
+    }
     return (
-      <div>
-        <h1> Sing up page</h1>
+      <div style={style}>
+        <h1> Sign up page</h1>
         <Form>
           <Row form>
             <Col md={4}>

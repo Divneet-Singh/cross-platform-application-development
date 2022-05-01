@@ -7,121 +7,121 @@ import axios from 'axios'
 import { Table } from 'reactstrap';
 
 export default class AllPaition extends Component {
-    state = {
-apo : [],
-users :[],
-doc: []
-        
-    }
+  state = {
+    apo: [],
+    users: [],
+    doc: []
 
-showAll = () =>{
- 
-}
-componentDidMount(){
-  axios.get('http://localhost:4001/usershow/apo')
-  .then(res => {
-let deta = {...this.state} 
-deta.apo = res.data.apo
-this.setState(deta)
+  }
 
-    console.log(res)
+  showAll = () => {
 
-  })
-  .catch(err => (console.log( + err)))
-  axios.get('http://localhost:4001/usershow/all')
-  .then(res => {
-let deta = {...this.state} 
-deta.users = res.data.users
-this.setState(deta)
+  }
+  componentDidMount() {
+    axios.get('http://localhost:4001/usershow/apo')
+      .then(res => {
+        let deta = { ...this.state }
+        deta.apo = res.data.apo
+        this.setState(deta)
 
-    console.log("masseg")
+        console.log(res)
 
-  })
-  .catch(err => (console.log( + err)))
-  axios.get('http://localhost:4001/usershow/ald')
-  .then(res => {
-let deta = {...this.state} 
-deta.doc = res.data.users
-this.setState(deta)
+      })
+      .catch(err => (console.log(+ err)))
+    axios.get('http://localhost:4001/usershow/all')
+      .then(res => {
+        let deta = { ...this.state }
+        deta.users = res.data.users
+        this.setState(deta)
 
-    console.log("masseg")
+        console.log("masseg")
 
-  })
-  .catch(err => (console.log( + err)))
-}
-idToname =() =>{
+      })
+      .catch(err => (console.log(+ err)))
+    axios.get('http://localhost:4001/usershow/ald')
+      .then(res => {
+        let deta = { ...this.state }
+        deta.doc = res.data.users
+        this.setState(deta)
+
+        console.log("masseg")
+
+      })
+      .catch(err => (console.log(+ err)))
+  }
+  idToname = () => {
     this.state.apo.forEach(element => {
-        this.state.users.forEach(ele => {
-        if (element.patient_id === ele._id){
-            element.name = ele.username
+      this.state.users.forEach(ele => {
+        if (element.patient_id === ele._id) {
+          element.name = ele.username
         }
 
-        });
-});
+      });
+    });
 
-} 
+  }
 
   render() {
-      this.idToname()
+    this.idToname()
     //   user._id
     console.log(this.state.users)
     console.log(this.state.apo)
-var doc = this.state.doc.map((el ,i) =>{
+    var doc = this.state.doc.map((el, i) => {
 
-return <option value={i}>{el.username}</option>
-})
+      return <option value={i}>{el.username}</option>
+    })
     var Data = this.state.apo.map((ele, i) => {
-        var status;
-        if (ele.status == 0 ){
-            status = "requst"
-        }
-        else if  (ele.status == 1 ){
+      var status;
+      if (ele.status == 0) {
+        status = "requst"
+      }
+      else if (ele.status == 1) {
 
-        }
-        else {
+      }
+      else {
 
-        }
+      }
 
       return <tr>
-        
-      <th scope="row">{i+1}</th>
-      <td>{ele.name}</td>
-      <td>{ele.reservation_reason}</td> 
-      <td>{ele.date}</td>
-      <td>{status}</td>
 
-      <td><select name="doc">
-     
-      {doc}
- 
-</select></td>
-      <td>{status}</td>
+        <th scope="row">{i + 1}</th>
+        <td>{ele.name}</td>
+        <td>{ele.reservation_reason}</td>
+        <td>{ele.date}</td>
+        <td>{status}</td>
 
-     
-    </tr>
-  })
+        {/* <td><select name="doc">
+
+          {doc}
+
+        </select></td>
+        <td>{status}</td> */}
+
+
+      </tr>
+    })
     return (
       <div>
- <Table striped>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th> Name</th>
-            <th> reasons</th>
-            <th>Data and time</th>
-            <th>status</th>
-            <th>change status</th>
-            <th>choose  doctor</th>
+        <Table striped>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Reason</th>
+              <th>Date and time</th>
+              <th>Status</th>
+              {/* <th>Change Status</th> */}
+              {/* <th>Choose Caregiver</th> */}
 
 
-          </tr>
-        </thead>
-        <tbody>
-      
-          {Data}
-        </tbody>
-      </Table>
-            </div>
+            </tr>
+          </thead>
+          <tbody>
+
+            {Data}
+          </tbody>
+        </Table>
+      </div>
     )
   }
 }

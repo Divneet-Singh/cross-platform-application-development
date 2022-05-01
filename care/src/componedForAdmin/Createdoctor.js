@@ -40,7 +40,7 @@ export default class Createdoctor extends Component {
   render() {
     return (
       <div>
- <h1> Create doctor</h1>
+ <h1> Create Careprovider</h1>
         <Form className = "creetdoctor">
           <Row form>
             <Col md={6}>
@@ -85,7 +85,7 @@ export default class Createdoctor extends Component {
             <Input type="checkbox" name="check" id="exampleCheck" />
             <Label for="exampleCheck" check>Check me out</Label>
           </FormGroup>
-         <Button onClick={this.registerHandler}>Creat </Button>
+         <Button onClick={this.registerHandler}>Create </Button>
         </Form>
               </div>
     )

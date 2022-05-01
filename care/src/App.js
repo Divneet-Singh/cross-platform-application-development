@@ -206,9 +206,9 @@ export default class App extends Component {
                     </li>
                     <a href="#!"><Link to="/FOQ">FAQ</Link>{' '}</a>
 
-                    <li>
+                    {/* <li>
                       <a href="#!"> Terms and Conditions </a>
-                    </li>
+                    </li> */}
                     <li>
                       <a href="#!"><Link to="/Admin"> Admin Dashboard </Link>{' '}</a>
                     </li>
@@ -222,7 +222,7 @@ export default class App extends Component {
             </div>
 
           </footer>
-          <p>© Copyright 2019. All Rights Reserved. </p>
+          <p>© Copyright 2022. All Rights Reserved. </p>
         </div>
 
       </Router>

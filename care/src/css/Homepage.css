@@ -1,3 +1,7 @@
 .imageforhome{
     height: 600px;
 }
+
+.fade.modal.show {
+    z-index: 99999;
+}

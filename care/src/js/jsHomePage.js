@@ -38,7 +38,7 @@ class ModalExample extends React.Component {
     
             <Modal show={this.state.show} onHide={this.handleClose}>
               <Modal.Header closeButton>
-                <Modal.Title>Are you shore</Modal.Title>
+                <Modal.Title>Are you sure?</Modal.Title>
               </Modal.Header>
               <Modal.Footer>
                 <Button variant="secondary" onClick={this.handleClos}>
