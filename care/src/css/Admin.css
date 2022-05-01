@@ -1,0 +1,44 @@
+/* * {
+border: 1px solid black;
+
+} */
+
+.contenerpord {
+    display: flex;
+    margin: 30px;
+}
+.left h2,
+h4,
+h3,
+h5 {
+    text-align: center;
+    cursor: default;
+}
+.rihgt {
+    height: 504px;
+    width: 800px;
+    margin-left: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.O {
+    height: 130px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.thec {
+    margin: 10px 0px;
+    height: 50px;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.thec:hover {
+    background: rgb(219, 241, 237);
+}
